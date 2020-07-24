@@ -26,10 +26,15 @@ const eqObjects = function(object1, object2) {
       if (Array.isArray(object1[i]) && Array.isArray(object2[i])) {
         if (!eqArrays(object1[i], object2[i]))
           return false;
-      } else {
-        if (object1[i] !== object2[i])
-          return false;
-      }
+      } else if (!Array.isArray(object1[i]) && !Array.isArray(object2[i])) {
+        if (typeof object1[i] === 'object' && typeof object2[i] === 'object') {
+          if (!eqObjects(object1[i], object2[i]))
+            return false;
+        } else {
+          if (object1[i] !== object2[i])
+            return false;
+        }
+      } 
     }
     return true;
   } else
@@ -43,13 +48,18 @@ const abc = { a: "1", b: "2", c: "3" };
 
 
 // These are passing
-assertEqual(eqObjects(ab,ba), true);
-assertEqual(eqObjects(ab, abc), false);
+// assertEqual(eqObjects(ab,ba), true);
+// assertEqual(eqObjects(ab, abc), false);
 
 
 const cd = { c: "1", d: ["2", 3] };
 const dc = { d: ["2", 3], c: "1" };
 const cd2 = { c: "1", d: ["2", 3, 4] };
 
-assertEqual(eqObjects(cd, dc), true); // => true
-assertEqual(eqObjects(cd, cd2), false);
+// assertEqual(eqObjects(cd, dc), true); // => true
+// assertEqual(eqObjects(cd, cd2), false);
+
+assertEqual(eqObjects({ a: { z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }), true); // => true
+
+assertEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: { y: 0, z: 1 }, b: 2 }), true); // => false
+assertEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: 1, b: 2 }), false); // => false
