@@ -10,6 +10,6 @@ const countLetters = function(str) {
       result[char] = 1;
   }
   return result;
-}
+};
 
 module.exports = countLetters;

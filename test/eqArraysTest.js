@@ -12,6 +12,6 @@ describe("#eqArrays", () => {
   });
   it("should return true", () => {
     assert.isTrue(eqArrays([[2, 3], 4], [[2, 3], 4]));
-  })
+  });
 
 });

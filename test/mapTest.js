@@ -11,7 +11,7 @@ describe("#map", () => {
   });
 
   it("should return [0, 1, 0, 1, 1] for x => x.length % 2", () => {
-    const results1 = map(words, word => word.length % 2)
+    const results1 = map(words, word => word.length % 2);
     assert.deepEqual(results1, [0, 1, 0, 1, 1]);
   });
 
