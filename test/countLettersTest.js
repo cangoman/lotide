@@ -3,6 +3,7 @@ const countLetters = require('../countLetters');
 
 describe("#countLetters", () => {
   result1 = countLetters("CamiloAndresGomezBonilla");
+
   it("should return 3 a's for 'CamiloAndresGomezBonilla'", () => {
     assert.strictEqual(result1["a"], 3);
   });
@@ -15,5 +16,4 @@ describe("#countLetters", () => {
     assert.strictEqual(result1["n"], 2);
   });
 
-  
 });

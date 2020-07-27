@@ -1,7 +1,7 @@
 const assert = require('chai').assert;
 const countOnly = require('../countOnly');
 
-describe("#countOnly", () => { 
+describe("#countOnly", () => {
   const firstNames = [
     "Karl",
     "Salima",
