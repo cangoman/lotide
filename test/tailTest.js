@@ -1,15 +1,22 @@
-const assertEqual = require("../assertEqual");
+const assert = require('chai').assert;
 const tail = require("../tail");
 
-const numbers = [1, 5, 10, 20];
-let numTail = tail(numbers);
-assertEqual(5, numTail[0]);
 
-numTail = tail(numTail);
-assertEqual(10, numTail[0]);
+describe("#tail", () => {
+  it("should return [5, 10, 20] for for [1, 5, 10, 20];", () => {
+    assert.deepEqual(tail([1, 5, 10, 20]), [5, 10, 20]);
+  });
 
-numTail = tail(numTail);
-assertEqual(20, numTail[0]);
+  it("should return [10, 20] for [ 5, 10, 20]", () => {
+    assert.deepEqual(tail([5, 10, 20]), [10, 20]);
+  });
+
+  it("should return empty array [] for an empty array []", () => {
+    assert.deepEqual(tail([]), []);
+  });
+
+});
+
 
 
 
