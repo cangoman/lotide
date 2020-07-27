@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/cangoman/lotide#readme",
   "devDependencies": {
+    "chai": "^4.2.0",
     "chao": "^1.0.3",
     "mocha": "^8.0.1"
   }
