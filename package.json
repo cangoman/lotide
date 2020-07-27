@@ -1,0 +1,26 @@
+{
+  "name": "lotide",
+  "version": "0.0.0",
+  "description": "lotide, a Lodash clone built as part of LightHouse Labs web dev bootcamp",
+  "main": "",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cangoman/lotide.git"
+  },
+  "author": "Camilo Gomez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cangoman/lotide/issues"
+  },
+  "homepage": "https://github.com/cangoman/lotide#readme",
+  "devDependencies": {
+    "chao": "^1.0.3",
+    "mocha": "^8.0.1"
+  }
+}
